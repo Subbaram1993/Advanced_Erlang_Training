@@ -12,8 +12,8 @@ permissions:
 jobs:
 
   build:
-   
-   runs-on: ubuntu-latest
+    
+    runs-on: ubuntu-latest
 
     container:
       image: erlang:27.0
