@@ -1,0 +1,19 @@
+name: Erlang CI WIN
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          choco install erlang
+      - name: Run tests
+        run: |
+          erl -eval 'eunit:test()' -s init stop
